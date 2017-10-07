@@ -1,0 +1,589 @@
+/*! HTML5 Boilerplate v5.3.0 | MIT License | https://html5boilerplate.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+/* Box Model Hack */
+ * {
+      -moz-box-sizing: border-box; /* Firexfox */
+      -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+      box-sizing: border-box; /* IE */
+ }
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+body {
+	background-color: #00ffff;
+  font-family: 'Roboto Mono', monospace;
+}
+
+/*toggle class - jQuery */
+
+.hidden {
+  display: none;
+}
+
+
+/*three wrappers*/
+
+.left-options {
+  width: 33%;
+  float: left;
+}
+
+.main-area {
+  margin-left: 25%;
+  margin-right: 25%;
+  display: block;
+  text-align: center;
+  position: relative;
+}
+
+.right-options {
+  width: 33%;
+  float: right;
+}
+
+/*first wrapper*/
+
+/*name of game*/
+
+#background {
+  height: 40px;
+  display: block;
+}
+
+/*buttons for the main area*/
+
+#shirt_button {
+  padding: 30px;
+  width: 90%;
+  margin-top: 10%;
+}
+
+#pant_button {
+ padding: 20px;
+ width: 90%;
+ margin-top: 15%;
+}
+
+#reset_button {
+  padding: 10px;
+  width: 90%;
+  margin-top: 15%;
+}
+
+/*buttons*/
+
+button {
+  font-family: 'Roboto Mono', monospace;
+  border-radius: 6px;
+  border: 3px solid white;
+}
+
+/*list of clothes */
+
+ul {
+	list-style-type: none;
+	display: inline-block;
+}
+
+/*changing of clothes:*/
+
+.panel {
+  border: 2px solid grey;
+  width: 40%;
+  height: 10%;
+  min-height: 60px;
+  float: left;
+  border-radius: 3px;
+  margin: 10px 6px 0 0;
+  padding: 3px;
+}
+
+.shirtOne {
+  background-image: url("https://i.imgur.com/057zIPZ.png");
+  background-size: 58px 54px;
+  background-repeat: no-repeat;
+}
+
+.shirtTwo {
+  background-image: url("https://i.imgur.com/3cokgMx.png");
+  background-size: 58px 54px;
+  background-repeat: no-repeat;
+}
+
+.shirtThree {
+  background-image: url("https://i.imgur.com/zz1e5kz.png");
+  background-size: 58px 54px;
+  background-repeat: no-repeat;
+}
+
+.shirtFour{
+  background-image: url("https://i.imgur.com/bKHEVJt.png");
+  background-size: 58px 54px;
+  background-repeat: no-repeat;
+}
+
+/*changing of pants*/
+
+.pantsOne {
+  background-image: url("https://i.imgur.com/9lh9FWr.png");
+  background-size: 45px 50px;
+  background-repeat: no-repeat;
+}
+
+.pantsTwo {
+  background-image: url("https://i.imgur.com/2nAa883.png");
+  background-size: 45px 50px;
+  background-repeat: no-repeat;
+}
+
+.pantsThree {
+  background-image: url("https://i.imgur.com/aepeWIz.png");
+  background-size: 45px 50px;
+  background-repeat: no-repeat;
+}
+
+.pantsFour {
+  background-image: url("https://i.imgur.com/3r6sADV.png");
+  background-size: 45px 50px;
+  background-repeat: no-repeat;
+}
+
+
+/*main wrapper with directions*/
+
+.topButton {
+  font-size: 1.1em;
+}
+
+.topButt {
+  font-size: .9em;
+}
+
+.drag {
+  font-size: .7em;
+}
+
+/*main characters*/
+
+#character,
+#characterTwo {
+  z-index: -1000;
+  display: none;
+  height: 88%;
+}
+
+/*shirts and pants positioning */
+
+.shirt {
+	visibility: hidden;
+  z-index: 2;
+}
+
+/*tops and the edits*/
+
+img#top1.shirt {
+  visibility: hidden;
+  width: 40.5%;
+  height: auto;
+  position: absolute;
+  left: 109px;
+  bottom: 1081px;
+  right: 0;
+}
+
+img#top2.shirt {
+  visibility: hidden;
+  width: 40.5%;
+  height: auto;
+  position: absolute;
+  left: 109px;
+  bottom: 1081px;
+  right: 0;
+}
+
+img#top3.shirt {
+  visibility: hidden;
+  width: 40.5%;
+  height: auto;
+  position: absolute;
+  left: 109px;
+  bottom: 1081px;
+  right: 0;
+}
+
+img#top4.shirt {
+  visibility: hidden;
+  width: 40.5%;
+  height: auto;
+  position: absolute;
+  left: 109px;
+  bottom: 1081px;
+  right: 0;
+}
+
+img#top5.shirt {
+  visibility: hidden;
+  width: 40.5%;
+  height: auto;
+  position: absolute;
+  left: 109px;
+  bottom: 1081px;
+  right: 0;
+}
+
+/*pants and the edits*/
+
+.pant {
+	visibility: hidden;
+  z-index: 1;
+}
+
+img#bottom1.pant {
+  visibility: hidden;
+  width: 30%;
+  height: auto;
+  position: relative;
+  left: 221px;
+  right: 0;
+  bottom: 172px;
+}
+
+img#bottom2.pant {
+  visibility: hidden;
+  width: 31.5%;
+  height: auto;
+  position: relative;
+  left: 221px;
+  right: 0;
+  bottom: 172px;
+}
+
+img#bottom3.pant {
+  visibility: hidden;
+  width: 31.5%;
+  height: auto;
+  position: relative;
+  left: 221px;
+  right: 0;
+  bottom: 172px;
+}
+
+img#bottom4.pant {
+  visibility: hidden;
+  width: 31.5%;
+  height: auto;
+  position: relative;
+  left: 221px;
+  right: 0;
+  bottom: 172px;
+}
+
+
+
+/* right wrapper */
+
+/* reset buttons */
+
+
+#reset,
+#resetTwo {
+  padding: 10px;
+  margin-top: 10px;
+}
+
+/* character selection */
+
+#characterOption {
+  width: 15%;
+  height: auto;
+  position: absolute;
+  left: 940px;
+  top: 27px;
+}
+
+#characterOption:hover {
+  cursor: pointer;
+}
+
+#characterTwoOption:hover {
+  cursor: pointer;
+}
+
+#characterTwoOption {
+  width: 11%;
+  height: auto;
+  position: absolute;
+  left: 1100px;
+  top: 59px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+  /*
+   * Hide visually and from screen readers
+   */
+
+  .hidden {
+      display: none !important;
+  }
+
+  /*
+   * Hide only visually, but have it available for screen readers:
+   * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+   */
+
+  .visuallyhidden {
+      border: 0;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+  }
+
+  /*
+   * Extends the .visuallyhidden class to allow the element
+   * to be focusable when navigated to via the keyboard:
+   * https://www.drupal.org/node/897638
+   */
+
+  .visuallyhidden.focusable:active,
+  .visuallyhidden.focusable:focus {
+      clip: auto;
+      height: auto;
+      margin: 0;
+      overflow: visible;
+      position: static;
+      width: auto;
+  }
+
+  /*
+   * Hide visually and from screen readers, but maintain layout
+   */
+
+  .invisible {
+      visibility: hidden;
+  }
+
+  /*
+   * Clearfix: contain floats
+   *
+   * For modern browsers
+   * 1. The space content is one way to avoid an Opera bug when the
+   *    `contenteditable` attribute is included anywhere else in the document.
+   *    Otherwise it causes space to appear at the top and bottom of elements
+   *    that receive the `clearfix` class.
+   * 2. The use of `table` rather than `block` is only necessary if using
+   *    `:before` to contain the top-margins of child elements.
+   */
+
+  .clearfix:before,
+  .clearfix:after {
+      content: " "; /* 1 */
+      display: table; /* 2 */
+  }
+
+  .clearfix:after {
+      clear: both;
+  }
+
+  /* ==========================================================================
+     EXAMPLE Media Queries for Responsive Design.
+     These examples override the primary ('mobile first') styles.
+     Modify as content requires.
+     ========================================================================== */
+
+  @media only screen and (min-width: 35em) {
+      /* Style adjustments for viewports that meet the condition */
+  }
+
+  @media print,
+         (-webkit-min-device-pixel-ratio: 1.25),
+         (min-resolution: 1.25dppx),
+         (min-resolution: 120dpi) {
+      /* Style adjustments for high resolution devices */
+  }
+
+  /* ==========================================================================
+     Print styles.
+     Inlined to avoid the additional HTTP request:
+     http://www.phpied.com/delay-loading-your-print-css/
+     ========================================================================== */
+
+  @media print {
+      *,
+      *:before,
+      *:after,
+      *:first-letter,
+      *:first-line {
+          background: transparent !important;
+          color: #000 !important; /* Black prints faster:
+                                     http://www.sanbeiji.com/archives/953 */
+          box-shadow: none !important;
+          text-shadow: none !important;
+      }
+
+      a,
+      a:visited {
+          text-decoration: underline;
+      }
+
+      a[href]:after {
+          content: " (" attr(href) ")";
+      }
+
+      abbr[title]:after {
+          content: " (" attr(title) ")";
+      }
+
+      /*
+       * Don't show links that are fragment identifiers,
+       * or use the `javascript:` pseudo protocol
+       */
+
+      a[href^="#"]:after,
+      a[href^="javascript:"]:after {
+          content: "";
+      }
+
+      pre,
+      blockquote {
+          border: 1px solid #999;
+          page-break-inside: avoid;
+      }
+
+      /*
+       * Printing Tables:
+       * http://css-discuss.incutio.com/wiki/Printing_Tables
+       */
+
+      thead {
+          display: table-header-group;
+      }
+
+      tr,
+      img {
+          page-break-inside: avoid;
+      }
+
+      img {
+          max-width: 100% !important;
+      }
+
+      p,
+      h2,
+      h3 {
+          orphans: 3;
+          widows: 3;
+      }
+
+      h2,
+      h3 {
+          page-break-after: avoid;
+      }
+  }
